@@ -1,6 +1,8 @@
-number = 80
+# Assign a numeric value
+number = 70
 
-if (number >= 65):
+# Check the is more than 70 or not
+if (number >= 70):
     print("You have passed")
 else:
-    print("You have failed")
+    print("You have not passed")

@@ -1,0 +1,1 @@
+data = "Nova ya Allah semoga Allah bangga sama aku"

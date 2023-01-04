@@ -25,21 +25,18 @@ if __name__ == "__main__":
         print("========================")
 
         print(f"1. Read Data")
-        print(f"2. Creat Data")
+        print(f"2. Create Data")
         print(f"3. Update Data")
         print(f"4. Delete Data")
 
         user_option = input("Masukkan opsi: ")
         
-        print("\n========================\n")
-
         match user_option:
-            case "1": print("Read Data")
-            case "2": print("Creat Data")
+            case "1": CRUD.read_console()
+            case "2": print("Create Data")
             case "3": print("Update Data")
             case "4": print("Delete Data")
 
-        print("\n========================\n")
         is_done = input("Apakah sudah selesai?(y/n) ")
         if is_done == "y" or is_done == "Y":
             break

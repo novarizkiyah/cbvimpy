@@ -14,16 +14,53 @@ def update_console():
         
     data_break = data_buku.split(",")
     pk = data_break[0]
-    date_add = data_break[1]
+    data_add = data_break[1]
     penulis = data_break[2]
     judul = data_break[3]
     tahun = data_break[4][:-1]
 
-    print(pk)
-    print(date_add)
-    print(penulis)
-    print(judul)
-    print(tahun)
+    # print(pk)
+    # print(date_add)
+    # print(penulis)
+    # print(judul)
+    # print(tahun)
+
+    #milih mana yang akan diupdate, bikin looping
+
+    while(True):
+        print("\n"+"="*100)
+        print("Silahkan pilih data apa yang akan diupdate")
+        print(f"1. Judul\t:{judul:.40}")
+        print(f"2. Penulis\t:{penulis:.40}")
+        print(f"3. Tahun\t:{tahun:4}")
+
+        user_option = input("Pilih data [1,2,3]: ")
+        print("\n"+"="*100)
+        
+        match user_option:
+            case "1": judul = input("judul\t: ")
+            case "2": penulis = input("penulis\t: ")
+            case "3": 
+                while(True):
+                    try:
+                        tahun = int(input("Tahun: "))
+                        if len(str(tahun))== 4:
+                            break
+                        else:
+                            print("Tahun harus empat angka")
+                    except:
+                        print("Tahun harus angka, silahkan masukkan lagi")
+            case _:print("index tidak cocok")
+        
+        print("Data baru Anda")
+        print(f"1. Judul\t:{judul:.40}")
+        print(f"2. Penulis\t:{penulis:.40}")
+        print(f"3. Tahun\t:{tahun:4}")
+
+        is_done = input("Apakah data sudah sesuai?(y/n) ")
+        if is_done == "y" or is_done == "Y":
+            break
+    Operasi.update(no_buku,pk,data_add,tahun,judul,penulis)
 
 def create_console():
     #Header
@@ -65,7 +102,7 @@ def read_console():
         penulis = data_break[2]
         judul = data_break[3]
         tahun = data_break[4]
-        print(f"{index+1:4} | {judul:.40} | {penulis:.40} | {tahun:4}")
+        print(f"{index+1:4} | {judul:.40} | {penulis:.40} | {tahun:4}",end="")
     #Footer
     print("="*100+"\n")
 
